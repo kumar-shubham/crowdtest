@@ -79,6 +79,7 @@ $db['production']['hostname'] = 'localhost';
 $db['production']['username'] = 'root';
 $db['production']['password'] = '';
 $db['production']['database1'] = 'agile2';
+$db['production']['database'] = 'crowdtest';
 $db['production']['dbdriver'] = 'mysqli';
 $db['production']['dbprefix'] = '';
 $db['production']['pconnect'] = FALSE;
