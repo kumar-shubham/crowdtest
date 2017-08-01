@@ -17,7 +17,7 @@
 </head>
 
 <body class="gray-bg">
-<div id="main-wra">
+<div id="main-wra" style="display: none;">
     	
     <div class="text-center loginscreen animated fadeInDown">
         <div id="agile-forgotlogin-part">
@@ -30,13 +30,21 @@
                 <h1 class="logo-name"></h1>
 
             </div>
+
+            <?php if ($flag=='mismatch')
+            {?>
+            <div class="alert alert-danger ">
+                Password and Confirm Password are not same.
+
+            </div>
+            <?php }?>
          
-            <h2>Create Account</h2>
+            <h2>Create Client Account</h2>
             <p>
                
             </p>
             <p></p>
-            <form class="m-t" role="form" method="POST" action="<?php echo base_url();?>">
+            <form class="m-t" role="form" method="POST" action="<?php echo base_url();?>login/user_signup">
             <?php 
                $csrf = array(
         						'name' => $this->security->get_csrf_token_name(),
@@ -55,7 +63,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required="required">
                 </div>
                  <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Retype Password" required="required">
+                    <input type="password" name="confirm_password" class="form-control" placeholder="Retype Password" required="required">
                 </div>
                 <input type="hidden" name="flag" value="create"/>
                 <button type="submit" class="btn btn-primary block full-width m-b">Create Account</button>
@@ -68,6 +76,13 @@
         </div>
     </div>
 </div>
+    </div>
+    </div>
+
+    <div  style="text-align: center; margin-top: 15%;">
+        <h1>
+            Coming Soon...
+        </h1>
     </div>
     <!-- Mainly scripts -->
     <script src="<?php echo base_url();?>assets/js/jquery-2.1.1.js"></script>

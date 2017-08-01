@@ -149,7 +149,46 @@ class Login extends CI_Controller {
 	 */
 	public function create_account()
 	{
-		$this->load->view('createaccount');
+		$this->load->view('create_account');
+	}
+
+	public function create_user_account()
+	{
+		$this->load->view('create_user_account');
+	}
+
+	public function create_client_account()
+	{
+		$this->load->view('create_client_account');
+	}
+
+	public function user_signup()
+	{
+		$userName=$this->security->xss_clean($this->input->post('username'));
+		$email=$this->security->xss_clean($this->input->post('email'));
+		$password=$this->security->xss_clean($this->input->post('password'));
+		$cnf_password=$this->security->xss_clean($this->input->post('confirm_password'));
+
+		if($password != $cnf_password){
+			$data['flag']='mismatch';
+			$this->load->view('create_user_account',$data);
+		}
+
+		$datam= array(
+				//'project_id'=> $this->input->post('pid'),
+				'username'=>$userName,
+				'password'=>$password,
+				'user_role'=>"User",
+				'user_type_id'=>2,
+				'email'=>$email);
+
+		$this->load->model('Usersmodel');
+		$this->Usersmodel->insert_user_details($this->security->xss_clean($datam));
+		$data['flag']='create';
+
+		$data['error_flag']=true;
+		
+		$this->load->view('agile_login',$data);
 	}
 	
 	/**
