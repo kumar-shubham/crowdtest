@@ -54,5 +54,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 if (config_item('installed') == 'no')
 {
+	log_message('debug', 'Inside routes') ;
 	$route["default_controller"] = "Install";
+}
+else{
+log_message('debug', 'Inside elseeeeee') ;
 }
