@@ -139,9 +139,11 @@ class Projectsmodel extends CI_Model {
 	 *        	$client_id
 	 */
 	public function get_project_count($client_id) {
+		log_message('debug', 'client_id---'.$client_id) ;
 		if ($client_id == null or $client_id == '0') {
 			$this->db->select ( 'count(*) as project_count' );
 			$this->db->from ( 'ag_project_mst' );
+			$this->db->where ( 'client_id', $client_id );
 			// $this->db->where('project_id',$project_id);
 			// $this->db->where('status','Not Started');
 			$query = $this->db->get ();

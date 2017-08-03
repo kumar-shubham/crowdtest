@@ -98,7 +98,7 @@
 									<label class="col-lg-3 control-label">Organization</label>
 									<div class="col-lg-3">
 										<input type="organization" name="organization"
-											class="form-control" required="required">
+											class="form-control">
 									</div>
 								</div>
 

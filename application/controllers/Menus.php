@@ -37,8 +37,10 @@ class Menus extends CI_Controller {
 			$client_id_val = $this->session->userdata ( 'client_id' );
 			$data ['menu_name'] = $this->Loginmodel->get_main_menu_list ( $user_type_id, 'Dashboard' );
 			$this->session->set_userdata ( 'first_level_menu', $data );
+			log_message('debug', 'client_id---val -- '.$client_id_val) ;
 			if ($client_id_val == null or $client_id_val == '0') {
 				$client_id = null;
+				log_message('debug', 'client_id---val111 -- '.$client_id_val) ;
 			} else {
 				$client_id = $client_id_val;
 			}

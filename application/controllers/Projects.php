@@ -34,18 +34,30 @@ class Projects extends CI_Controller {
 	public function index()
 	{
 		$client_id=$this->security->xss_clean($this->input->post('clientid'));
-		
+		$startdate=$this->security->xss_clean($this->input->post('startdate'));
+		$startdate=empty($startdate) ? NULL : $startdate;
+		$enddate=$this->security->xss_clean($this->input->post('enddate'));
+		$enddate=empty($enddate) ? NULL : $enddate;
+		$allocated_res=$this->security->xss_clean($this->input->post('allocated_res'));
+		$allocated_res=empty($allocated_res) ? NULL : $allocated_res;
+		$frate=$this->security->xss_clean($this->input->post('frate'));
+		$frate=empty($frate) ? NULL : $frate;
+		$hrate=$this->security->xss_clean($this->input->post('hrate'));
+		$hrate=empty($hrate) ? NULL : $hrate;
+		$esthrs=$this->security->xss_clean($this->input->post('esthrs'));
+		$esthrs=empty($esthrs) ? NULL : $esthrs;
+
 		$datam= array(
 		//'project_id'=> $this->input->post('pid'),
 		'Name'=>$this->security->xss_clean($this->input->post('pname')),
 		//'project_lead'=>$this->input->post('phone'),
 		'client_id'=>$this->security->xss_clean($this->input->post('clientid')),
-		'start_date'=>$this->security->xss_clean($this->input->post('startdate')),
-		'end_date'=>$this->security->xss_clean($this->input->post('enddate')),
-		'resources_allocatted'=>($this->input->post('allocated_res')),
-		'fixed_rate'=>$this->security->xss_clean($this->input->post('frate')),
-		'hourly_rate'=>$this->security->xss_clean($this->input->post('hrate')),
-		'estimated_hours'=>$this->security->xss_clean($this->input->post('esthrs')),
+		'start_date'=>$startdate,
+		'end_date'=>$enddate,
+		'resources_allocatted'=>$allocated_res,
+		'fixed_rate'=>$frate,
+		'hourly_rate'=>$hrate,
+		'estimated_hours'=>$esthrs,
 		'notes'=>$this->security->xss_clean($this->input->post('notes')));
 		$this->load->model('Projectsmodel');
 		$this->Projectsmodel->insert_project_details($datam);

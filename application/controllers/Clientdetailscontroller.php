@@ -34,36 +34,59 @@ class Clientdetailscontroller extends CI_Controller {
 	public function index()
 	{
 		
+		if ($this->input->server('REQUEST_METHOD') == 'GET'){
+			
+				if ($this->session->user_name != null) {
+				
+				$this->load->model ( 'Loginmodel' );
+				$user_type_id = $this->session->userdata ( 'user_type_id' );
+				$data ['menu_name'] = $this->Loginmodel->get_main_menu_list ( $user_type_id, 'Clients' );
+				$this->session->set_userdata ( 'first_level_menu', $data );
+				
+				$this->load->model ( 'Clientmodel' );
+				$results = $this->Clientmodel->view_clients_overview ();
+				$data = array (
+						'results' => $results 
+				);
+				
+				$this->load->view ( 'menu' );
+				$this->load->view ( 'border' );
+				$this->load->view ( 'clients', $data );
+			}
+		}
+		else if ($this->input->server('REQUEST_METHOD') == 'POST'){
+			$datam= array(
+			'organization_name'=> $this->input->post('orgname'),
+			'contact_person'=>$this->input->post('contactperson'),
+			'phone_no'=>$this->input->post('phone'),
+			'email'=>$this->input->post('email'),
+			'address'=>$this->input->post('address'),
+			'bank_name'=>$this->input->post('bank_name'),
+			'swift_code'=>$this->input->post('bank_swift'),
+			'account_holder_name'=>$this->input->post('bank_ac_name'),
+			'account_no'=>$this->input->post('bank_ac_number'),
+			'iban'=>$this->input->post('iban'),
+			'skype'=>$this->input->post('skype'),
+			'linkedin'=>$this->input->post('linkedin'),
+			'facebook'=>$this->input->post('facebook'),
+			'twitter'=>$this->input->post('twitter'),
+			'ftp_username'=>$this->input->post('ftp_username'),
+			'ftp_password'=>$this->input->post('ftp_password'),
+			'hosting_url'=>$this->input->post('hosting_url'),
+			'hosting_username'=>$this->input->post('hosting_uname'),
+			'hosting_password'=>$this->input->post('hosting_pwd'));
+			$this->load->model('Clientmodel');
+			$this->Clientmodel->insert_client_details($this->security->xss_clean($datam));
+			
+			
+			$results=$this->Clientmodel->view_clients_overview();
+			$data=array('results'=>$results);
+			$this->load->view('menu');
+			$this->load->view('border');
+			$this->load->view('clients',$data);
+		}
 		
-		$datam= array(
-		'organization_name'=> $this->input->post('orgname'),
-		'contact_person'=>$this->input->post('contactperson'),
-		'phone_no'=>$this->input->post('phone'),
-		'email'=>$this->input->post('email'),
-		'address'=>$this->input->post('address'),
-		'bank_name'=>$this->input->post('bank_name'),
-		'swift_code'=>$this->input->post('bank_swift'),
-		'account_holder_name'=>$this->input->post('bank_ac_name'),
-		'account_no'=>$this->input->post('bank_ac_number'),
-		'iban'=>$this->input->post('iban'),
-		'skype'=>$this->input->post('skype'),
-		'linkedin'=>$this->input->post('linkedin'),
-		'facebook'=>$this->input->post('facebook'),
-		'twitter'=>$this->input->post('twitter'),
-		'ftp_username'=>$this->input->post('ftp_username'),
-		'ftp_password'=>$this->input->post('ftp_password'),
-		'hosting_url'=>$this->input->post('hosting_url'),
-		'hosting_username'=>$this->input->post('hosting_uname'),
-		'hosting_password'=>$this->input->post('hosting_pwd'));
-		$this->load->model('Clientmodel');
-		$this->Clientmodel->insert_client_details($this->security->xss_clean($datam));
 		
-		
-		$results=$this->Clientmodel->view_clients_overview();
-		$data=array('results'=>$results);
-		$this->load->view('menu');
-		$this->load->view('border');
-		$this->load->view('clients',$data);
 		
 	}
 	

@@ -64,21 +64,21 @@ function CancelFunction()
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Contact Person</label>
                 	<div class="col-lg-3">
-                   	<input type="contact_person" name="contact_person" class="form-control" value="<?php echo $client->contact_person ; ?>"  required="required">
+                   	<input type="contact_person" name="contact_person" class="form-control" value="<?php echo $client->contact_person ; ?>" >
                  	</div>
                 </div>
                 
                  <div class="form-group">
                     <label class="col-lg-3 control-label">Organization Name</label>
                 	<div class="col-lg-3">
-                   	<input type="organization_name" name="organization_name" class="form-control" value="<?php echo $client->organization_name ; ?>"  required="required">
+                   	<input type="organization_name" name="organization_name" class="form-control" value="<?php echo $client->organization_name ; ?>"  >
                  	</div>
                 </div>
                 
                  <div class="form-group">
                     <label class="col-lg-3 control-label">Phone No.</label>
                 	<div class="col-lg-3">
-                   	<input type="text" name="phone_no" class="form-control" value="<?php echo $client->phone_no ; ?>"  required="required">
+                   	<input type="text" name="phone_no" class="form-control" value="<?php echo $client->phone_no ; ?>" >
                  	</div>
                 </div>
                 
@@ -92,7 +92,7 @@ function CancelFunction()
                  <div class="form-group" >
                     <label class="col-lg-3 control-label">Address</label>
                 	<div class="col-lg-3">
-                   	<input type="address" name="address" class="form-control" value="<?php echo $client->address ; ?>"  required="required">
+                   	<input type="address" name="address" class="form-control" value="<?php echo $client->address ; ?>" >
                  	</div>
                 </div>
                 
@@ -101,35 +101,35 @@ function CancelFunction()
         	       <div class="form-group" >
                     <label class="col-lg-3 control-label">Bank Name</label>
                 	<div class="col-lg-3">
-                   	<input type="bank_name" name="bank_name" class="form-control" value="<?php echo $client->bank_name ; ?>"  required="required">
+                   	<input type="bank_name" name="bank_name" class="form-control" value="<?php echo $client->bank_name ; ?>" >
                  	</div>
                 </div> 
                 
                 <div class="form-group" >
                     <label class="col-lg-3 control-label">Swift Code</label>
                 	<div class="col-lg-3">
-                   	<input type="swift_code" name="swift_code" class="form-control" value="<?php echo $client->swift_code ; ?>"  required="required">
+                   	<input type="swift_code" name="swift_code" class="form-control" value="<?php echo $client->swift_code ; ?>"  >
                  	</div>
                 </div> 
                 
                 <div class="form-group" >
                     <label class="col-lg-3 control-label">IBan</label>
                 	<div class="col-lg-3">
-                   	<input type="iban" name="iban" class="form-control" value="<?php echo $client->iban ; ?>"  required="required">
+                   	<input type="iban" name="iban" class="form-control" value="<?php echo $client->iban ; ?>" >
                  	</div>
                 </div> 
                 
                 <div class="form-group" >
                     <label class="col-lg-3 control-label">Account Holder Name</label>
                 	<div class="col-lg-3">
-                   	<input type="account_holder_name" name="account_holder_name" class="form-control" value="<?php echo $client->account_holder_name ; ?>"  required="required">
+                   	<input type="account_holder_name" name="account_holder_name" class="form-control" value="<?php echo $client->account_holder_name ; ?>"  >
                  	</div>
                 </div> 
                 
                 <div class="form-group" >
                     <label class="col-lg-3 control-label">Account Number</label>
                 	<div class="col-lg-3">
-                   	<input type="account_no" name="account_no" class="form-control" value="<?php echo $client->account_no ; ?>"  required="required">
+                   	<input type="account_no" name="account_no" class="form-control" value="<?php echo $client->account_no ; ?>"  >
                  	</div>
                 </div> 
                 

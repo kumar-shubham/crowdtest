@@ -56,17 +56,17 @@
 
 				<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                                             <div class="form-group">
-                                                <label>Organization Name *</label>
-                                                <input id="orgname" name="orgname" type="text" class="form-control required">
+                                                <label>Organization Name</label>
+                                                <input id="orgname" name="orgname" type="text" class="form-control">
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label>Contact Person *</label>
-                                                <input id="contactperson" name="contactperson" type="text" class="form-control required">
+                                                <label>Contact Person</label>
+                                                <input id="contactperson" name="contactperson" type="text" class="form-control">
                                             </div>
                                               <div class="form-group">
-                                                <label>Phone No. *</label>
-                                                <input id="phone" name="phone" type="text" class="form-control required phone">
+                                                <label>Phone No. </label>
+                                                <input id="phone" name="phone" type="text" class="form-control phone">
                                             </div>
                                              <div class="form-group1">
                                                 <label>Email *</label>
@@ -94,28 +94,28 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Bank name *</label>
-                                                <input id="bank_name" name="bank_name" type="text" class="form-control required">
+                                                <label>Bank name </label>
+                                                <input id="bank_name" name="bank_name" type="text" class="form-control ">
                                             </div>
                                             <div class="form-group">
-                                                <label>SWIFT Code *</label>
-                                                <input id="bank_swift" name="bank_swift" type="text" class="form-control required">
+                                                <label>SWIFT Code </label>
+                                                <input id="bank_swift" name="bank_swift" type="text" class="form-control ">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Account Holder Name *</label>
-                                                <input id="bank_ac_name" name="bank_ac_name" type="text" class="form-control required ">
+                                                <label>Account Holder Name </label>
+                                                <input id="bank_ac_name" name="bank_ac_name" type="text" class="form-control  ">
                                             </div>
                                             <div class="form-group">
-                                                <label>Account Number *</label>
+                                                <label>Account Number </label>
                                                 <input id="bank_ac_number" name="bank_ac_number" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>IBAN *</label>
-                                                <input id="iban" name="iban" type="text" class="form-control required ">
+                                                <input id="iban" name="iban" type="text" class="form-control ">
                                             </div>
                                             <div class="form-group">
                                             </div>
@@ -128,8 +128,8 @@
                                     <div class="row">
                                      <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Skype *</label>
-                                                <input id="skype" name="skype" type="text" class="form-control required ">
+                                                <label>Skype </label>
+                                                <input id="skype" name="skype" type="text" class="form-control  ">
                                             </div>
                                             <div class="form-group">
                                                 <label>LinkedIn </label>
@@ -154,8 +154,8 @@
                                  <div class="row">
                                     <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>FTP Username *</label>
-                                                <input id="ftp_username" name="ftp_username" type="text" class="form-control required ">
+                                                <label>FTP Username </label>
+                                                <input id="ftp_username" name="ftp_username" type="text" class="form-control  ">
                                             </div>
                                             <div class="form-group">
                                                 <label>FTP Password </label>

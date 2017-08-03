@@ -30,13 +30,21 @@
                 <h1 class="logo-name"></h1>
 
             </div>
+
+            <?php if ($flag=='mismatch')
+            {?>
+            <div class="alert alert-danger ">
+                Password and Confirm Password are not same.
+
+            </div>
+            <?php }?>
          
-            <h2>Create Account</h2>
+            <h2>Create Tester Account</h2>
             <p>
                
             </p>
             <p></p>
-            <form class="m-t" role="form" method="POST" action="<?php echo base_url();?>">
+            <form class="m-t" role="form" method="POST" action="<?php echo base_url();?>login/user_signup">
             <?php 
                $csrf = array(
         						'name' => $this->security->get_csrf_token_name(),
@@ -55,7 +63,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required="required">
                 </div>
                  <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Retype Password" required="required">
+                    <input type="password" name="confirm_password" class="form-control" placeholder="Retype Password" required="required">
                 </div>
                 <input type="hidden" name="flag" value="create"/>
                 <button type="submit" class="btn btn-primary block full-width m-b">Create Account</button>

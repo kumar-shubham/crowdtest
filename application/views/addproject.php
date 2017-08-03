@@ -96,13 +96,13 @@
                  <div class="form-group">
                     <label class="col-lg-4 control-label">Allocated Resources</label>
                 	<div class="col-lg-6">
-                    <input type="allocated_res" name="allocated_res" class="form-control"  required="required">
+                    <input type="allocated_res" name="allocated_res" class="form-control"  >
                     </div>
                 </div>
                  <div class="form-group">
                     <label class="col-lg-4 control-label">Start Date</label>
                 	<div class="col-lg-6">
-                    <input id="startdate" type="startdate" name="startdate" class="form-control"  required="required">
+                    <input id="startdate" type="startdate" name="startdate" class="form-control" >
                     
                     </div>
                     
@@ -114,7 +114,7 @@
                  <div class="form-group">
                     <label class="col-lg-4 control-label">End Date</label>
                 	<div class="col-lg-6">
-                    <input id="enddate" type="enddate" name="enddate" class="form-control"  required="required">
+                    <input id="enddate" type="enddate" name="enddate" class="form-control"  >
                     </div>
                     
                     <div class="col-lg-1">
@@ -125,25 +125,25 @@
                 <div class="form-group">
                     <label class="col-lg-4 control-label">Fixed Rate</label>
                 	<div class="col-lg-6">
-                    <input type="frate" name="frate" class="form-control"  required="required">
+                    <input type="frate" name="frate" class="form-control"  >
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-4 control-label">Hourly Rate</label>
                 	<div class="col-lg-6">
-                    <input type="hrate" name="hrate" class="form-control"  required="required">
+                    <input type="hrate" name="hrate" class="form-control"  >
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-4 control-label">Estimated Hours</label>
                 	<div class="col-lg-6">
-                    <input type="esthrs" name="esthrs" class="form-control"  required="required">
+                    <input type="esthrs" name="esthrs" class="form-control"  >
                     </div>
                 </div>
                  <div class="form-group">
                     <label class="col-lg-4 control-label">Notes</label>
                 	<div class="col-lg-6">
-                    <textarea type="notes" name="notes" class="form-control"  required="required"></textarea>
+                    <textarea type="notes" name="notes" class="form-control"  ></textarea>
                     </div>
                 </div>
                 <?php 
