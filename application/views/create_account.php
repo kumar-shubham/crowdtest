@@ -18,14 +18,14 @@
 
 <body class="gray-bg">
 <div id="main-wra">
-    	
+        
     <div class="text-center loginscreen animated fadeInDown">
         <div id="agile-forgotlogin-part">
-        	<div class="agile-logo">
-				<img src="<?php echo base_url();?>assets/img/logo.png" alt="logo">
-			</div>
-            	<div class="agile-login-bg effect">
-                	<div>
+            <div class="agile-logo">
+                <img src="<?php echo base_url();?>assets/img/logo.png" alt="logo">
+            </div>
+                <div class="agile-login-bg effect">
+                    <div>
                 <div>
                     <h1 class="logo-name"></h1>
 

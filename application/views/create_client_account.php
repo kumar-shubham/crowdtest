@@ -18,14 +18,14 @@
 
 <body class="gray-bg">
 <div id="main-wra" style="display: block;">
-    	
+        
     <div class="text-center loginscreen animated fadeInDown">
         <div id="agile-forgotlogin-part">
-        	<div class="agile-logo">
-				<img src="<?php echo base_url();?>assets/img/logo.png" alt="logo">
-			</div>
-            	<div class="agile-login-bg effect">
-                	<div>
+            <div class="agile-logo">
+                <img src="<?php echo base_url();?>assets/img/logo.png" alt="logo">
+            </div>
+                <div class="agile-login-bg effect">
+                    <div>
             <div>
                 <h1 class="logo-name"></h1>
 
@@ -47,12 +47,12 @@
             <form class="m-t" role="form" method="POST" action="<?php echo base_url();?>login/client_signup">
             <?php 
                $csrf = array(
-        						'name' => $this->security->get_csrf_token_name(),
-        						'hash' => $this->security->get_csrf_hash()
-				);?>
+                                'name' => $this->security->get_csrf_token_name(),
+                                'hash' => $this->security->get_csrf_hash()
+                );?>
 
 
-				<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 <div class="form-group">
                     <input type="username" name="username" class="form-control" placeholder="Username" required="required">
                 </div>
