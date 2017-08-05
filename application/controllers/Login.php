@@ -217,6 +217,29 @@ class Login extends CI_Controller {
 
 		$this->load->model('Usersmodel');
 		$this->Usersmodel->insert_user_details($this->security->xss_clean($datam));
+
+		$datam= array(
+			'organization_name'=> $organization,
+			'contact_person'=>$this->input->post('contactperson'),
+			'phone_no'=>$this->input->post('phone'),
+			'email'=>$email,
+			'address'=>$this->input->post('address'),
+			'bank_name'=>$this->input->post('bank_name'),
+			'swift_code'=>$this->input->post('bank_swift'),
+			'account_holder_name'=>$this->input->post('bank_ac_name'),
+			'account_no'=>$this->input->post('bank_ac_number'),
+			'iban'=>$this->input->post('iban'),
+			'skype'=>$this->input->post('skype'),
+			'linkedin'=>$this->input->post('linkedin'),
+			'facebook'=>$this->input->post('facebook'),
+			'twitter'=>$this->input->post('twitter'),
+			'ftp_username'=>$this->input->post('ftp_username'),
+			'ftp_password'=>$this->input->post('ftp_password'),
+			'hosting_url'=>$this->input->post('hosting_url'),
+			'hosting_username'=>$this->input->post('hosting_uname'),
+			'hosting_password'=>$this->input->post('hosting_pwd'));
+			$this->load->model('Clientmodel');
+			$this->Clientmodel->insert_client_details($this->security->xss_clean($datam));
 		$data['flag']='create';
 
 		$data['error_flag']=true;
@@ -261,9 +284,9 @@ class Login extends CI_Controller {
 			$this->load->model('Projectsmodel');
 			//$results=$this->Projectsmodel->ViewProjectsOverview();
 			//$data=array('results'=>$results);
-			$data['results']=$this->Projectsmodel->view_projects_overview($client_id);
+			$data['results']=$this->Projectsmodel->view_projects_overview_of_user($client_id, $user_type_id);
 			$data['todolist']=$this->Projectsmodel->get_all_todo_list($client_id);
-			$data['projectcount']=$this->Projectsmodel->get_project_count($client_id);
+			$data['projectcount']=$this->Projectsmodel->get_project_count_of_user($client_id, $user_type_id);
 			$data['openIssueCount']=$this->Projectsmodel->get_open_issue_count($client_id);
 			$data['closedIssueCount']=$this->Projectsmodel->get_closed_issue_count($client_id);
 			$data['loggedhours']=$this->Projectsmodel->get_total_logged_hours($client_id);

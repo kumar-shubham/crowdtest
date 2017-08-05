@@ -71,6 +71,15 @@
                  <div class="form-group">
                     <input type="password" name="confirm_password" class="form-control" placeholder="Retype Password" required="required">
                 </div>
+                 <div class="form-group">
+                    <input type="text" name="contactperson" class="form-control" placeholder="Contact Person">
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Phone No">
+                </div>
+                 <div class="form-group">
+                    <input type="text" name="address" class="form-control" placeholder="Address">
+                </div>
                 <input type="hidden" name="flag" value="create"/>
                 <button type="submit" class="btn btn-primary block full-width m-b">Create Account</button>
 

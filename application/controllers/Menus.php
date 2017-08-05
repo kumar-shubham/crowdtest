@@ -40,7 +40,8 @@ class Menus extends CI_Controller {
 			log_message('debug', 'client_id---val -- '.$client_id_val) ;
 			if ($client_id_val == null or $client_id_val == '0') {
 				$client_id = null;
-				log_message('debug', 'client_id---val111 -- '.$client_id_val) ;
+				log_message('debug', 'client_id---val111
+				 -- '.$client_id_val) ;
 			} else {
 				$client_id = $client_id_val;
 			}
@@ -58,9 +59,9 @@ class Menus extends CI_Controller {
 			$this->load->model ( 'Projectsmodel' );
 			// $results=$this->Projectsmodel->view_projects_overview();
 			// $data=array('results'=>$results);
-			$data ['results'] = $this->Projectsmodel->view_projects_overview ( $client_id );
+			$data ['results'] = $this->Projectsmodel->view_projects_overview_of_user ( $client_id, $user_type_id );
 			$data ['todolist'] = $this->Projectsmodel->get_all_todo_list ( $client_id );
-			$data ['projectcount'] = $this->Projectsmodel->get_project_count ( $client_id );
+			$data ['projectcount'] = $this->Projectsmodel->get_project_count_of_user ( $client_id, $user_type_id );
 			$data ['openIssueCount'] = $this->Projectsmodel->get_open_issue_count ( $client_id );
 			$data ['closedIssueCount'] = $this->Projectsmodel->get_closed_issue_count ( $client_id );
 			$data ['loggedhours'] = $this->Projectsmodel->get_total_logged_hours ( $client_id );
@@ -368,7 +369,7 @@ class Menus extends CI_Controller {
 			$this->session->set_userdata ( 'first_level_menu', $data );
 			
 			$this->load->model ( 'Projectsmodel' );
-			$results = $this->Projectsmodel->view_projects_overview ( $this->session->userdata ( 'client_id' ) );
+			$results = $this->Projectsmodel->view_projects_overview_of_user ( $this->session->userdata ( 'client_id' ), $user_type_id );
 			$data = array (
 					'results' => $results 
 			);

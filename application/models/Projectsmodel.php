@@ -82,6 +82,30 @@ class Projectsmodel extends CI_Model {
 		$query = $this->db->get ();
 		return $query->result ();
 	}
+
+
+	/**
+	 * Methods to get Projects overview
+	 * 
+	 * @param
+	 *        	$client_id, $user_type_id
+	 */
+	public function view_projects_overview_of_user($client_id, $user_type_id) {
+		if (($client_id == null or $client_id == '0') and $user_type_id == 1) {
+			$queryParam = 'ag_project_mst.client_id = ag_client_details.client_id';
+		} else {
+			if($client_id == null or $client_id == '0'){
+				$client_id = '-1';
+			}
+			$queryParam = 'ag_project_mst.client_id = ag_client_details.client_id and ag_client_details.client_id=' . $client_id;
+		}
+		
+		$this->db->select ( 'project_id,Name,ag_client_details.organization_name client_name,resources_allocatted,start_date,end_date,estimated_hours' );
+		$this->db->from ( 'ag_project_mst' );
+		$this->db->join ( 'ag_client_details', $queryParam );
+		$query = $this->db->get ();
+		return $query->result ();
+	}
 	
 	/**
 	 * Method to get Current Invoice Id.
@@ -143,7 +167,36 @@ class Projectsmodel extends CI_Model {
 		if ($client_id == null or $client_id == '0') {
 			$this->db->select ( 'count(*) as project_count' );
 			$this->db->from ( 'ag_project_mst' );
+			// $this->db->where ( 'client_id', $client_id );
+			// $this->db->where('project_id',$project_id);
+			// $this->db->where('status','Not Started');
+			$query = $this->db->get ();
+			$ret = $query->row ();
+			return $ret->project_count;
+		} else {
+			$this->db->select ( 'count(*) as project_count' );
+			$this->db->from ( 'ag_project_mst' );
 			$this->db->where ( 'client_id', $client_id );
+			// $this->db->where('status','Not Started');
+			$query = $this->db->get ();
+			$ret = $query->row ();
+			return $ret->project_count;
+		}
+	}
+
+	/**
+	 * Method to get Project count based on client id.
+	 * 
+	 * @param
+	 *        	$client_id, $user_type_id
+	 */
+	public function get_project_count_of_user($client_id, $user_type_id) {
+		log_message('debug', 'client_id---'.$client_id) ;
+		log_message('debug', 'user_type_id---'.$user_type_id) ;
+		if (($client_id == null or $client_id == '0') and $user_type_id == '1') {
+			$this->db->select ( 'count(*) as project_count' );
+			$this->db->from ( 'ag_project_mst' );
+			// $this->db->where ( 'client_id', $client_id );
 			// $this->db->where('project_id',$project_id);
 			// $this->db->where('status','Not Started');
 			$query = $this->db->get ();
